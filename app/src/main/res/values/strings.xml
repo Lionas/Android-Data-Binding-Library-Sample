@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">DataBindingSample</string>
+
+    <string name="before_binding_first_name">山田</string>
+    <string name="before_binding_last_name">太郎</string>
+
+    <string name="after_binding_first_name">田中</string>
+    <string name="after_binding_last_name">二郎</string>
+
+    <string name="binding_text">苗字と名前をバインドする</string>
+
+    <string name="binding_label">文字列入力に連動したバインディング</string>
+    <string name="nick_name">ここに入力された文字列が表示されます</string>
+
+</resources>

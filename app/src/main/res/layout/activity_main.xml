@@ -1,0 +1,53 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- データ定義 -->
+    <data>
+        <variable name="user" type="jp.lionas.android.databindingsample.User"/>
+        <import type="jp.lionas.android.databindingsample.StringUtil"/>
+        <import type="android.view.View" />
+    </data>
+
+    <!-- レイアウト -->
+    <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_margin="20dp"
+                  android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.lastName}"/>
+
+        <Button
+            android:id="@+id/button"
+            android:text="@string/binding_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/binding_label" />
+
+        <EditText
+            android:id="@+id/inputAreaEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="@color/material_blue_grey_800"
+            android:text='@{user.nickName.length() &gt; 0 ? StringUtil.insertString(user.nickName) : @string/nick_name}' />
+
+    </LinearLayout>
+
+</layout>
