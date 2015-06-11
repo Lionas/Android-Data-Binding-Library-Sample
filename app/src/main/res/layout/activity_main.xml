@@ -1,29 +1,35 @@
+<!-- 一番外側は layout タグでくくる -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- データ定義 -->
     <data>
+        <!-- 変数としてカスタムクラスを定義 -->
         <variable name="user" type="jp.lionas.android.databindingsample.User"/>
+
+        <!-- メソッドの利用　-->
         <import type="jp.lionas.android.databindingsample.StringUtil"/>
-        <import type="android.view.View" />
     </data>
 
     <!-- レイアウト -->
     <LinearLayout
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_margin="20dp"
-                  android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
 
+        <!-- UserクラスのfirstNameメンバを参照 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.firstName}"/>
 
+        <!-- UserクラスのlastNameメンバを参照 -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.lastName}"/>
 
+        <!-- Bindするためのボタン -->
         <Button
             android:id="@+id/button"
             android:text="@string/binding_text"
@@ -36,11 +42,14 @@
             android:layout_marginTop="20dp"
             android:text="@string/binding_label" />
 
+        <!-- ユーザからのテキスト入力をニックネームとして扱う -->
         <EditText
             android:id="@+id/inputAreaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <!-- ニックネームの入力があるときは、<<<と>>>を前後に付与する -->
+        <!-- 入力値が空の時はデフォルトニックネームを表示 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -8,7 +8,6 @@ import android.text.TextWatcher;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import jp.lionas.android.databindingsample.R;
 import jp.lionas.android.databindingsample.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity implements TextWatcher {
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
     @OnClick(R.id.button)
     public void bindText() {
 
-        // データの再バインド
+        // 違うデータで再バインド
         mUser.setFirstName(getString(R.string.after_binding_first_name));
         mUser.setLastName(getString(R.string.after_binding_last_name));
     }
@@ -42,8 +41,10 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
+
         // EditTextが変更されたらバインドされた文字列を反映
         mUser.setNickName(s.toString());
+
     }
 
     @Override
